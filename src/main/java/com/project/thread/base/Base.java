@@ -1,4 +1,4 @@
-package com.project.base;
+package com.project.thread.base;
 
 public class Base {
     public static void main(String[] args) {
@@ -15,13 +15,15 @@ public class Base {
         Thread thread = new Thread(r,"实现接口线程");
         thread.start();
 
-        // lambda简写
-        Thread t = new Thread(() -> {
-            System.out.println("start new thread!");
-        });
-        t.start(); // 启动新线程
+        // 匿名类
+        Thread t1 = new Thread(){
+            @Override
+            public void run() {
+                System.out.println("start1 new thread!");
+            }
+        };
+        t1.start();
 
-        //
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -30,6 +32,14 @@ public class Base {
         };
         Thread t2 = new Thread(runnable);
         t2.start();
+
+        // lambda简写
+        Thread t = new Thread(() -> {
+            System.out.println("start new thread!");
+        });
+        t.start(); // 启动新线程
+
+
 
     }
 }

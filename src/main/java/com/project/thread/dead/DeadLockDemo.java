@@ -1,4 +1,4 @@
-package com.project.dead;
+package com.project.thread.dead;
 
 /**
  * 死锁

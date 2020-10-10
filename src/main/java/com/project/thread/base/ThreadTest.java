@@ -1,4 +1,4 @@
-package com.project.base;
+package com.project.thread.base;
 
 
 /**

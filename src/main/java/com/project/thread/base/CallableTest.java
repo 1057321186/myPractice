@@ -1,4 +1,4 @@
-package com.project.base;
+package com.project.thread.base;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
