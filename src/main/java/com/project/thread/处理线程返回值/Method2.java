@@ -18,7 +18,7 @@ public class Method2 implements Runnable{
 				e.printStackTrace();
 			}
 		}
-		System.out.println("vale:"+method2.value);
+		System.out.println("value:"+method2.value);
 		
 		
 	}

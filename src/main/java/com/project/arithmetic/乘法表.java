@@ -1,5 +1,10 @@
 package com.project.arithmetic;
 
+/**
+ *
+ *  打印输出 99乘法表
+ *
+ */
 public class 乘法表 {
 	public static void main(String[] args) {
 //		for(int i=1,j=1;j<=9;i++){

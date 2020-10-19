@@ -4,7 +4,7 @@ package com.project.thread;
 
 public class SleepAndWait {
 	public static void main(String[] args) {
-		final Object lock=new Object();
+		final Object lock = new Object();
 		
 		//执行线程1
 		new Thread(new Runnable() {
