@@ -26,7 +26,7 @@ public class CallableTest implements Callable {
     public static void main(String[] args) {
 
         CallableTest callableTest=new CallableTest();
-        FutureTask<Integer> futureTask=new FutureTask<>(callableTest);
+        FutureTask<Integer> futureTask = new FutureTask<>(callableTest);
         for(int i = 0;i < 100;i++)  {
             System.out.println(Thread.currentThread().getName()+" 的循环变量i的值"+i);
             if(i==20)  {
