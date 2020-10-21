@@ -1,8 +1,6 @@
 package com.project.thread.base;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 /**
  *
@@ -26,20 +24,31 @@ public class CallableTest implements Callable {
     public static void main(String[] args) {
 
         CallableTest callableTest=new CallableTest();
-        FutureTask<Integer> futureTask = new FutureTask<>(callableTest);
-        for(int i = 0;i < 100;i++)  {
-            System.out.println(Thread.currentThread().getName()+" 的循环变量i的值"+i);
-            if(i==20)  {
-                new Thread(futureTask,"有返回值的线程").start();
-            }
-        }
-        try  {
-            System.out.println("子线程的返回值："+futureTask.get());
-        } catch (InterruptedException e)  {
+        ExecutorService  exe = Executors.newCachedThreadPool();
+        Future submit = exe.submit(callableTest);
+        try {
+                System.out.println(submit.get());
+
+        } catch (InterruptedException e) {
             e.printStackTrace();
-        } catch (ExecutionException e)  {
+        } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
+//        FutureTask<Integer> futureTask = new FutureTask<>(callableTest);
+//        for(int i = 0;i < 100;i++)  {
+//            System.out.println(Thread.currentThread().getName()+" 的循环变量i的值"+i);
+//            if(i==20)  {
+//                new Thread(futureTask,"有返回值的线程").start();
+//            }
+//        }
+//        try  {
+//            System.out.println("子线程的返回值："+futureTask.get());
+//        } catch (InterruptedException e)  {
+//            e.printStackTrace();
+//        } catch (ExecutionException e)  {
+//            e.printStackTrace();
+//        }
 
     }
 
