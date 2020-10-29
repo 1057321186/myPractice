@@ -12,8 +12,8 @@ public class FileClass {
 	 */
 	
 	public static void main(String[] args) {
-		File file = new File("C:\\Users\\Administrator\\Desktop\\QQ");	//创建一个file对象并指明地址
-		if(!file.exists()){		//判断文件是否存在
+		File file = new File("C:\\Users\\Administrator\\Desktop\\IOtest.txt");	//创建一个file对象并指明地址
+		if(file.exists()){		//判断文件是否存在
 			//file.delete();
 			//System.out.print("文件被删除");
 		}else {
@@ -22,7 +22,7 @@ public class FileClass {
 				System.out.println("文件被已经创建");
 				
 				/***********获取文件的信息***********/
-				String name=file.getName();		//获取文件名字
+				String name = file.getName();		//获取文件名字
 				long length = file.length();	//获取文件长度
 				boolean ifhidden=file.isHidden();	//判断是否为隐藏文件
 				boolean ifDirectory = file.isDirectory();	//判断是否为一个文件夹

@@ -10,13 +10,13 @@ public class Server {
 		
 		
 		try {
-			//服务端打开端口8080
-			ServerSocket serverSocket=new ServerSocket(8888);
+			// 服务端打开端口8080
+			ServerSocket serverSocket = new ServerSocket(8888);
 			
-			//在端口8080监听，看看是否有连接请求过来
+			// 在端口8080监听，看看是否有连接请求过来
 			System.out.println("监听端口号：8888");
 			
-			Socket socket=serverSocket.accept();
+			Socket socket = serverSocket.accept();
 			System.out.println("有连接过来:"+socket);
 			 //打开输入流
             InputStream is = socket.getInputStream();
