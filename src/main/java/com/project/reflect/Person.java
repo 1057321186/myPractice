@@ -1,5 +1,8 @@
 package com.project.reflect;
 
+import lombok.Data;
+
+@Data
 public class Person {
 	public int age;
 	private String name;
@@ -19,22 +22,6 @@ public class Person {
 		System.out.println(this.name+"说：你是猪儿虫");
 	}
 	
-	
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 
 }
