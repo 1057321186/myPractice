@@ -1,5 +1,6 @@
 package com.project.thread.pool;
 
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -17,6 +18,9 @@ public class ThreadPoolTest {
 //        singleThreadExecutor();
     }
 
+    /**
+     *      线程数固定的线程池
+     */
     public static void fixedThreadPoolTest() {
         int nThreads = 3; // 线程池的数量规定为3
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(nThreads);
@@ -35,6 +39,9 @@ public class ThreadPoolTest {
         }
     }
 
+    /**
+     *      线程数根据任务动态调整的线程池；
+     */
     public static void cachedThreadPoolTest() {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for(int i = 0; i < 10; i++) {
@@ -47,17 +54,22 @@ public class ThreadPoolTest {
             cachedThreadPool.execute(new Runnable(){
                 public void run() {
                     System.out.println(index);
+
                 }
             });
         }
     }
 
+    /**
+     *      能实现定时、周期性任务的线程池
+     */
     public static void scheduledThreadPool() {
         int corePoolSize = 3; // 线程池大小为3
         ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(corePoolSize);
         scheduledThreadPool.scheduleAtFixedRate(new Runnable(){ // 执行周期性的任务
             public void run() {
                 System.out.println("延迟 3 seconds");
+                System.out.println(new Date());
             }
         }, 1, 3, TimeUnit.SECONDS); // 延迟1s后，每3s执行一次
     }
