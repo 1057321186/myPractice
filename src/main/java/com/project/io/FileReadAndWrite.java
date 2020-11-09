@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class 文件读写练习 {
+public class FileReadAndWrite {
 	public static void main(String[] args) {
 
 		/***创建一个指定位置的txt文件，并且写入内容***/
