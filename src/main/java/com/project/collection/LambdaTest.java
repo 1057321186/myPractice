@@ -32,10 +32,21 @@ public class LambdaTest {
 	      greetService1.sayMessage("Runoob");
 	      greetService2.sayMessage("Google");
 	      
-	      Say say= (a,b) -> a+b;
+	      Say say= (a,b) -> a-b;
 	      
-	      System.out.println("1+1="+test.count(1, 1, say));
+	      System.out.println("1-1="+test.count(1, 1, say));
+
+	      Print print = ()-> System.out.println("嘻嘻嘻");
+
 	   }
+
+		private int count(int a,int b,Say say){
+			return say.count(a, b);
+		}
+		private int operate(int a, int b, MathOperation mathOperation){
+			return mathOperation.operation(a, b);
+		}
+
 	    //
 		interface Say{
 			int count(int a,int b);
@@ -48,12 +59,11 @@ public class LambdaTest {
 	   interface GreetingService {
 	      void sayMessage(String message);
 	   }
-	    private int count(int a,int b,Say say){
-	    	return say.count(a, b);
-	    }
-	   private int operate(int a, int b, MathOperation mathOperation){
-	      return mathOperation.operation(a, b);
+
+
+	   interface Print{
+			void printf();
 	   }
-	}
+}
 
 

@@ -1,7 +1,7 @@
-package com.project.collection;
+package com.project.collection.map;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
@@ -25,6 +25,7 @@ public class MapTest {
 			System.out.print(map.get(key) + " ");
 		}
 		System.out.println("\n------------------------------");
+
 		// Entry
 		for (Entry<Object, Object> mEntry : map.entrySet()) {
 			System.out.println(mEntry.getKey() + ":" + mEntry.getValue());
@@ -37,7 +38,13 @@ public class MapTest {
 		}
 
 		// 引入guava
-		HashMap<Object, Object> objectObjectHashMap = Maps.newHashMap();
+		HashMap<Object, Object> hashmap = Maps.newHashMap();
+		Maps.newLinkedHashMap();
+		Maps.newConcurrentMap();
+		hashmap.put("1","a1");
+		hashmap.put("2","a2");
+		hashmap.put("3","a3");
+		hashmap.put("4","a4");
 
 
 	}

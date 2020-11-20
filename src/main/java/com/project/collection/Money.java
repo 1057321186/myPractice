@@ -1,30 +1,19 @@
 package com.project.collection;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 
+@Data
 public class Money {
-	
+
+
+
 	String merchantName;
 	
 	BigDecimal allMoney;
 	
-	
-	public String getMerchantName() {
-		return merchantName;
-	}
 
-	public void setMerchantName(String merchantName) {
-		this.merchantName = merchantName;
-	}
 
-	public BigDecimal getAllMoney() {
-		return allMoney;
-	}
-
-	public void setAllMoney(BigDecimal allMoney) {
-		this.allMoney = allMoney;
-	}
-
-	
 	
 }

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 日期相关工具类
  */
-@Slf4j
+
 public final class DateUtil {
     public static final String DATETIME_FOMAT = "yyyy-MM-dd HH:mm:ss";
     public static final String DATETIME_FOMAT_PAYTIME = "yyyyMMddHHmmss";
