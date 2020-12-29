@@ -3,6 +3,7 @@ package com.project.collection.map;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,26 +15,29 @@ import java.util.Map.Entry;
 public class MapTest {
 	public static void main(String[] args) {
 
-		Map<Object, Object> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
 		map.put("a", "1");
 		map.put("b", "2");
-		map.put("c", "3");
+		map.put("c", "");
 		map.put("d", "4");
 
 		// 遍历Map
 		for (Object key : map.keySet()) {
 			System.out.print(map.get(key) + " ");
 		}
-		System.out.println("\n------------------------------");
+
+		String c = map.get("c");
+		boolean empty = StringUtils.isEmpty(c);
+		System.out.println("\n-------------------"+empty+"-----------");
 
 		// Entry
-		for (Entry<Object, Object> mEntry : map.entrySet()) {
+		for (Entry<String, String> mEntry : map.entrySet()) {
 			System.out.println(mEntry.getKey() + ":" + mEntry.getValue());
 		}
 		System.out.println("\n------------------------------");
 
 		// 迭代器
-		for (Iterator<Entry<Object, Object>> iterator = map.entrySet().iterator(); iterator.hasNext();) {
+		for (Iterator<Entry<String, String>> iterator = map.entrySet().iterator(); iterator.hasNext();) {
 			System.out.print(iterator.next().getValue());
 		}
 

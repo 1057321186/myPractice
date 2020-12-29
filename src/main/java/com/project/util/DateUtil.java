@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -1104,4 +1105,34 @@ public final class DateUtil {
         cal.set(Calendar.MILLISECOND, 0);
         return (cal.getTimeInMillis() - System.currentTimeMillis()) / 1000;
     }
+
+    /**
+     * 计算两个字符串日期相差的天数
+     * @param startTime
+     * @param endTime
+     * @return
+     */
+    public static int differentDaysByMillisecond(String startTime,String endTime){
+
+        Date start = DateUtil.parseDateTime(startTime);
+        Date end = DateUtil.parseDateTime(endTime);
+        int i = daysBetween(start, end);
+        return i;
+    }
+
+    /**
+     * 获取今年的天数
+     */
+    public static int getLengthOfYear(){
+        int daysOfThisYear = LocalDate.now().lengthOfYear();
+        return daysOfThisYear;
+    }
+
+    /**
+     * 获取指定某年的天数
+     */
+    public static int getLengthOfYear(int year,int month,int day){
+       return LocalDate.of(year, month, day).lengthOfYear();
+    }
+
 }
