@@ -20,5 +20,8 @@ public class Main {
 
         int monthMaxDay = DateUtil.getMonthMaxDay(2017, 2);
         System.out.println(monthMaxDay);
+        StringBuffer s = new StringBuffer();
+        s.reverse();
+
     }
 }
