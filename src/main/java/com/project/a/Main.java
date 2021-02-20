@@ -58,5 +58,8 @@ public class Main {
         }else {
             System.out.println(false);
         }
+        StringBuffer s = new StringBuffer();
+        s.reverse();
+
     }
 }
