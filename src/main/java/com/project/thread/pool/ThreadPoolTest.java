@@ -1,15 +1,14 @@
 package com.project.thread.pool;
 
 import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  *
  */
 public class ThreadPoolTest {
+    ThreadPoolExecutor executor;
+
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 //        fixedThreadPoolTest();
@@ -19,7 +18,7 @@ public class ThreadPoolTest {
     }
 
     /**
-     *      线程数固定的线程池
+     *     线程数固定的线程池
      */
     public static void fixedThreadPoolTest() {
         int nThreads = 3; // 线程池的数量规定为3
@@ -40,7 +39,7 @@ public class ThreadPoolTest {
     }
 
     /**
-     *      线程数根据任务动态调整的线程池；
+     *     线程数根据任务动态调整的线程池；
      */
     public static void cachedThreadPoolTest() {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
@@ -61,7 +60,7 @@ public class ThreadPoolTest {
     }
 
     /**
-     *      能实现定时、周期性任务的线程池
+     *    能实现定时、周期性任务的线程池
      */
     public static void scheduledThreadPool() {
         int corePoolSize = 3; // 线程池大小为3

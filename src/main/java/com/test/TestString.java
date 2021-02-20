@@ -1,8 +1,14 @@
 package com.test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestString {
 
      public void testStringAndStringBuilder(){
+
+
+
         long startTime1 = System.currentTimeMillis();
         StringBuilder str1 = new StringBuilder("start");
         for (int i = 0;i < 100000; i++){

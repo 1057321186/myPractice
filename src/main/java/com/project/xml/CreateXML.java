@@ -14,7 +14,7 @@ import java.io.IOException;
 public class CreateXML {
 public static void main(String[] args) {
 	//1、创建目标文件对象
-	File createxml=new File("create.xml");
+	File createxml=new File("我的.xml");
 	//2、创建Document对象
 	Document document=DocumentHelper.createDocument();
 	//创建根节点
@@ -37,7 +37,6 @@ public static void main(String[] args) {
 		writer=new XMLWriter(new FileWriter(createxml),outputFormat);
 		writer.write(document);
 	} catch (Exception e) {
-		// TODO: handle exception
 		e.printStackTrace();
 	}finally {
 		try {

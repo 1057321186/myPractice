@@ -15,6 +15,9 @@ public class Test {
 		t2.start();
 		System.out.println("执行主线程");
 		ThreadLocal<String> threadLocal = new ThreadLocal<>();
+		threadLocal.set("这是值");
+		String s = threadLocal.get();
+		System.out.println(s);
 	}
 }
 

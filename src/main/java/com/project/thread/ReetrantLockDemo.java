@@ -18,7 +18,7 @@ public class ReetrantLockDemo implements Runnable {
     //公平锁：参数设置为true,倾向于将锁赋予等待时间最久的线程
     //公平锁：每个线程获取到锁的概率是是公平的
     //设置false，不公平
-    private ReentrantLock reentrantLock=new ReentrantLock(false);
+    private ReentrantLock reentrantLock = new ReentrantLock(false);
 
     @Override
     public void run() {
